@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Моя страница{% endblock %}</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/ura.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/home.css' %}">
+    {% block extra_css %}{% endblock %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'main_app/img/favicon.png' %}"/>
+</head>
+<body>
+
+  <!-- Логотип -->
+  <div class="logo"></div>
+  <!-- Основной контейнер -->
+  <div class="container">
+  <!-- Три слота -->
+    <div class="reel first"></div>
+    <div class="reel second"></div>
+    <div class="reel third"></div>
+
+  </div>
+  <!-- Кнопка управления -->
+  <div class="controls"></div>
+
+<div class="pyro">
+  <div class="before"></div>
+  <div class="after"></div>
+</div>
+
+  <div class="snow"></div>
+ <style>
+    body {
+      margin:0;
+      padding:0;
+      background: #003366;
+      overflow: hidden;
+    }
+
+    .pyro > .before, .pyro > .after {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+      animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    }
+
+    .pyro > .after {
+      animation-delay: 1.25s, 1.25s, 1.25s;
+      animation-duration: 1.25s, 1.25s, 6.25s;
+    }
+
+    @keyframes bang {
+      to {
+        box-shadow: -183px 44px hsl(39, 100%, 50%), 144px 253px hsl(327, 100%, 50%), -98px 55px hsl(265, 100%, 50%), 239px 342px hsl(192, 100%, 50%), -42px 229px hsl(42, 100%, 50%), -140px 350px hsl(126, 100%, 50%), 243px 100px hsl(197, 100%, 50%), -157px 42px hsl(171, 100%, 50%), 31px 169px hsl(276, 100%, 50%), 140px 258px hsl(28, 100%, 50%), 148px 147px hsl(199, 100%, 50%), 2px 63px hsl(136, 100%, 50%), -80px 300px hsl(109, 100%, 50%), 151px 157px hsl(210, 100%, 50%), -24px 96px hsl(247, 100%, 50%), 155px 133px hsl(11, 100%, 50%), -79px 201px hsl(43, 100%, 50%), -177px 92px hsl(195, 100%, 50%), 213px 76px hsl(338, 100%, 50%), 40px 328px hsl(228, 100%, 50%), 230px 274px hsl(306, 100%, 50%), -188px 177px hsl(153, 100%, 50%), 66px 48px hsl(248, 100%, 50%), 58px 305px hsl(86, 100%, 50%), 204px 279px hsl(209, 100%, 50%), 75px 254px hsl(22, 100%, 50%), -144px 280px hsl(333, 100%, 50%), 222px 262px hsl(346, 100%, 50%), -13px 221px hsl(336, 100%, 50%), -99px 76px hsl(128, 100%, 50%), -125px 130px hsl(157, 100%, 50%), 149px 260px hsl(329, 100%, 50%), 93px 37px hsl(354, 100%, 50%), 201px 123px hsl(218, 100%, 50%), 185px 208px hsl(203, 100%, 50%), 11px 253px hsl(353, 100%, 50%), 175px 294px hsl(164, 100%, 50%), 183px 255px hsl(359, 100%, 50%), 96px 133px hsl(122, 100%, 50%), 211px 284px hsl(319, 100%, 50%), 175px 336px hsl(349, 100%, 50%), -117px 291px hsl(70, 100%, 50%), 100px 218px hsl(313, 100%, 50%), 17px 217px hsl(206, 100%, 50%), 134px 200px hsl(144, 100%, 50%), -146px 227px hsl(25, 100%, 50%), 193px 42px hsl(258, 100%, 50%), 215px 245px hsl(327, 100%, 50%), -171px 196px hsl(20, 100%, 50%), 74px 312px hsl(230, 100%, 50%), 122px 257px hsl(229, 100%, 50%), 179px 76px hsl(46, 100%, 50%), 103px 47px hsl(318, 100%, 50%), 109px 129px hsl(294, 100%, 50%), 155px 212px hsl(224, 100%, 50%), 122px 97px hsl(30, 100%, 50%), 151px 229px hsl(154, 100%, 50%), 141px 309px hsl(303, 100%, 50%), 155px 199px hsl(353, 100%, 50%), 169px 311px hsl(231, 100%, 50%);
+      }
+    }
+
+    @keyframes gravity {
+      to {
+        transform: translateY(200px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes position {
+      0%, 19.9% {
+        margin-top: 10%;
+        margin-left: 40%;
+      }
+      20%, 39.9% {
+        margin-top: 40%;
+        margin-left: 30%;
+      }
+      40%, 59.9% {
+        margin-top: 20%;
+        margin-left: 70%
+      }
+      60%, 79.9% {
+        margin-top: 30%;
+        margin-left: 20%;
+      }
+      80%, 99.9% {
+        margin-top: 30%;
+        margin-left: 80%;
+      }
+    }
+  </style>
+<p class="pobeda">Ждём победителя !</p>
+<div class="avto">
+  <p>Авторизация</p>
+  <a href="#" id="vk-auth-link">
+    <i class='bx bxl-vk vk-icon'></i>
+  </a>
+</div>
+</div>
+
+<form id="form" class="ready" method="post" action="{% url 'parser_app:get_comments' %}">
+    {% csrf_token %}
+    <fieldset class="main ani">
+        <span id="progress_wrapper" class="ani">
+            <input
+                type="text"
+                id="video_id"
+                class="ani5 empty"
+                name="post_url"
+                placeholder="вставьте ссылку на пост"
+                autocomplete="off"
+                spellcheck="false"
+                wfd-id="id0">
+        </span>
+
+        <div class="button-group">
+            <button title="Выбрать победителя!" id="go" type="submit">Старт</button>
+        </div>
+    </fieldset>
+</form>
+  <audio id="spin-sound" src="{% static 'main_app/sounds/687105__aphom000__mouse-1-button-fast-click.wav' %}" preload="auto"></audio>
+    <script>
+        document.getElementById('go').addEventListener('click', function() {
+            var sound = document.getElementById('spin-sound');
+            sound.currentTime = 0; // Rewind to the beginning
+            sound.play();
+        });
+    </script>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+
+
+<script>
+    // Данные, переданные из Django
+    const authorList = {{ author_data|default:"[]"|safe }};
+
+    // Функция для перемешивания массива (алгоритм Fisher-Yates)
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    function nameCode() {
+        // Перемешиваем массив authorList
+        const shuffledAuthorList = shuffleArray([...authorList]); // Создаем копию массива, чтобы не изменять исходный
+
+        // Удаляем все элементы с классом .inner
+        document.querySelectorAll(".inner").forEach((el) => el.remove());
+
+        // Обновляем содержимое элементов с классами .first, .second и .third,
+        // вставляя внутрь два дива с классом .inner, содержащие имена авторов из соответствующих массивов
+        document.querySelector(".first").innerHTML = `
+            <div class="inner">${shuffledAuthorList.map(author => `
+                <div style="display: flex; align-items: center; direction: rtl;">
+                    <div style="border: 2px solid white; overflow: hidden; width: 100px; height: 120px; margin-left: 5px;">
+                        <img src=${author.photo_url}  alt="${author.first_name} ${author.last_name}" width="100px" height="100%" style="object-fit: cover:">
+                    </div>
+                    <span>${author.first_name} ${author.last_name}</span>
+                </div>
+            `).join("<br>")}</div>
+            <div class="inner">${shuffledAuthorList.map(author => `
+                <div style="display: flex; align-items: center; direction: rtl;">
+                    <div style="border: 2px solid white; overflow: hidden; width: 100px; height: 100px; margin-left: 5px;">
+                        <img src=${author.photo_url}  alt="${author.first_name} ${author.last_name}" width="100px" height="100%" style="object-fit: cover;">
+                    </div>
+                    <span>${author.first_name} ${author.last_name}</span>
+                </div>
+            `).join("<br>")}</div>
+        `;
+    }
+
+    // Запуск функции nameCode после полной загрузки документа
+    document.addEventListener("DOMContentLoaded", nameCode);
+
+    // Получаем кнопку с классом .controls для управления процессом
+    // const btnReload = document.querySelector(".controls");  Удалено, так как уже объявлено в main.js
+
+    // Добавляем обработчик события "click" на кнопку
+    // btnReload.addEventListener("click", nameCode); Удалено, так как уже объявлено в main.js
+</script>
